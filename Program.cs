@@ -37,7 +37,8 @@ namespace acfour_alvaro_cobo
             //Constants and variables
             const string FirstMessage = "Write how many numbers do you want to store? ";
             const string WriteNumbersMessage = "Write the number in the position {0}: ";
-            const string ErrorMessage = "Incorrect format.";
+            const string FormatExceptionMessage = "Incorrect format.";
+            const string ExceptionMessage = "Error.";
 
             int numUser;
 
@@ -59,7 +60,12 @@ namespace acfour_alvaro_cobo
             }
             catch (FormatException)
             {
-                Console.WriteLine(ErrorMessage);
+                Console.WriteLine(FormatExceptionMessage);
+            }
+
+            catch (Exception)
+            {
+                Console.WriteLine(ExceptionMessage);
             }
         }
     }
